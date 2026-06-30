@@ -25,6 +25,7 @@ public class Application {
     public static void main(String[] args) throws LifecycleException {
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(9999);
+        tomcat.getConnector();
         // api 서버로 쓸 거라 정적자원 디렉토리 명시 안 함
         Context context = tomcat.addContext("/backend", null);
         Tomcat.addServlet(context,"MyServlet", new MyServlet()); // 서블릿 등록
